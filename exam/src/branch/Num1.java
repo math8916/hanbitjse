@@ -27,8 +27,8 @@ public class Num1 {
  * */
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		String name1="",name2="",name3="";
-		int avg1=0,avg2=0,avg3=0;
+		String name1="",name2="",name3="",gradeN1="",gradeN2="",gradeN3="";
+		int avg1=0,avg2=0,avg3=0,gradeA1=0,gradeA2=0,gradeA3=0;
 		
 		System.out.println("이름을 입력하시요");
 		name1 = scanner.next();
@@ -47,34 +47,54 @@ public class Num1 {
 		avg3 = scanner.nextInt();
 		
 		if (avg1>avg2 && avg2>avg3 ) {
-			System.out.println("1등"+name1+" "+ avg1+"점");
-			System.out.println("2등"+name2+" "+ avg2+"점");
-			System.out.println("3등"+name3+" "+ avg3+"점");
+			gradeN1=name1;
+			gradeA1=avg1;
+			gradeN2=name2;
+			gradeA2=avg2;
+			gradeN3=name3;
+			gradeA3=avg3;
+			
 		} else if (avg1>avg3 && avg3>avg2) {
-			System.out.println("1등"+name1+" "+ avg1+"점");
-			System.out.println("2등"+name3+" "+ avg3+"점");
-			System.out.println("3등"+name2+" "+ avg2+"점");
+			gradeN1=name1;
+			gradeA1=avg1;
+			gradeN2=name3;
+			gradeA2=avg3;
+			gradeN3=name2;
+			gradeA3=avg2;
 		} else if (avg2>avg1 && avg1>avg3) {
-			System.out.println("1등"+name2+" "+ avg2+"점");
-			System.out.println("2등"+name1+" "+ avg1+"점");
-			System.out.println("3등"+name3+" "+ avg3+"점");
+			gradeN1=name2;
+			gradeA1=avg2;
+			gradeN2=name1;
+			gradeA2=avg1;
+			gradeN3=name3;
+			gradeA3=avg3;
 		} else if (avg2>avg3 && avg3>avg1) {
-			System.out.println("1등"+name2+" "+ avg2+"점");
-			System.out.println("2등"+name3+" "+ avg3+"점");
-			System.out.println("3등"+name1+" "+ avg1+"점");
+			gradeN1=name2;
+			gradeA1=avg2;
+			gradeN2=name3;
+			gradeA2=avg3;
+			gradeN3=name1;
+			gradeA3=avg1;
 		} else if (avg3>avg1 && avg1>avg2) {
-			System.out.println("1등"+name3+" "+ avg3+"점");
-			System.out.println("2등"+name1+" "+ avg1+"점");
-			System.out.println("3등"+name2+" "+ avg2+"점");
+			gradeN1=name3;
+			gradeA1=avg3;
+			gradeN2=name1;
+			gradeA2=avg1;
+			gradeN3=name2;
+			gradeA3=avg2;
 		} else  {
-			System.out.println("1등"+name3+" "+ avg3+"점");
-			System.out.println("2등"+name2+" "+ avg2+"점");
-			System.out.println("3등"+name1+" "+ avg1+"점");
+			gradeN1=name3;
+			gradeA1=avg3;
+			gradeN2=name2;
+			gradeA2=avg2;
+			gradeN3=name1;
+			gradeA3=avg1;
+		}
+			System.out.println("1등"+gradeN1+" "+ gradeA1+"점");
+			System.out.println("2등"+gradeN2+" "+ gradeA2+"점");
+			System.out.println("3등"+gradeN3+" "+ gradeA3+"점");
 		
-
-		
-
 		}
 		
-	}
+	
 }
