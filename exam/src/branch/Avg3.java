@@ -11,7 +11,7 @@ import java.util.Scanner;
  * @file_name : Avg.java
  * @story :
  */
-public class Avg2 {
+public class Avg3 {
 	/**
 	 * 클라이언트에서 프로그래 개발 요청이 왓습니다. 
 	 * 이름과 국,영,수,세과목 점수를 입력받아서 
@@ -24,17 +24,16 @@ public class Avg2 {
 	 * 60점 이상이면 D
 	 * 50점 이상이면 E
 	 * 50점 이하이면 F  학점입니다
-	 * 단 swich case 문으로 바꾸시요
 	 * 	 */
 
 	public static void main(String[] args) {
 
 		// -------------변수 ,선언부,준비,초기화(init)----------------------------
 				Scanner scanner = new Scanner(System.in);
-				int kor = 0, eng = 0, math = 0, total = 0, ave = 0;
+				int kor = 0, eng = 0, math = 0, total = 0, ave = 0, ave2=0;
 				String grade = "", name = "";
 				// -------------------연산부(알고리즘)------------------------------------------
-				System.out.print("이름 :");
+				System.out.println("이름 :");
 				name = scanner.nextLine();
 
 				System.out.println(" 점수는 100점을 넘을 수 없습니다. 국어 :  영어  수학");
@@ -51,22 +50,35 @@ public class Avg2 {
 				total = kor + eng + math;
 
 				ave = total / 3;
-
-				if (ave >= 90) {
+				
+						
+				switch (ave/10) {
+				case 10:
 					grade = "A";
-				} else if (ave >= 80) {
+					break;
+				case 9:
+					grade = "A";
+					break;
+				case 8:
 					grade = "B";
-				} else if (ave >= 70) {
+					break;
+				case 7:
 					grade = "C";
-				} else if (ave >= 60) {
+					break;
+				case 6:
 					grade = "D";
-				} else if (ave >= 50) {
-					grade = "E";
-				} else if (ave >= 0) {
-					grade = "F";
-				}
-				{
-				// ------------------출력부 콘솔------------------------
+					break;
+				case 5:
+					grade = "e";
+					break;
+
+				default:
+					grade = "f";
+					break;
+					
+				}		
+				
+								// ------------------출력부 콘솔------------------------
 
 					System.out.println(name + " " + "총점: " + total + "   평균 :" + ave + "  학점 : " + grade);
 					
@@ -74,4 +86,4 @@ public class Avg2 {
 
 			}
 
-		}
+		
