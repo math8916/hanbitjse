@@ -33,10 +33,12 @@ public class Gender {
 		idNo = scanner.next();
 		// 연산부
 		char c = idNo.charAt(7);
-		if (c == '0' || c == '9') {
-			System.out.println("잘못 입력 하셧습니다.");
+		if (c == '0' || c == '9' || c>58 || c<48) {
+			System.out.println("잘못 입력 하셨습니다.");
 			return;
 		}
+		// -- up casting c가 char에서 정수로 치환
+		// 실제 문자 1은 49번 이다
 		if (c % 2 == 1) {
 			sex = "남";
 		}
