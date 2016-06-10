@@ -30,18 +30,18 @@ public class Num1 {
 		String name1="",name2="",name3="",gradeN1="",gradeN2="",gradeN3="";
 		int avg1=0,avg2=0,avg3=0,gradeA1=0,gradeA2=0,gradeA3=0;
 		
-		System.out.println("이름을 입력하시요");
+		System.out.print("이름을 입력하시요 :");
 		name1 = scanner.next();
 		System.out.println("평균을 입력하시요");
 		avg1 = scanner.nextInt();
 		
 		
-		System.out.println("이름을 입력하시요");
+		System.out.print("이름을 입력하시요 :");
 		name2 = scanner.next();
 		System.out.println("평균을 입력하시요");
 		avg2 = scanner.nextInt();
 		
-		System.out.println("이름을 입력하시요");
+		System.out.print("이름을 입력하시요 :");
 		name3 = scanner.next();
 		System.out.println("평균을 입력하시요");
 		avg3 = scanner.nextInt();
@@ -90,9 +90,9 @@ public class Num1 {
 			gradeN3=name1;
 			gradeA3=avg1;
 		}
-			System.out.println("1등"+gradeN1+" "+ gradeA1+"점");
-			System.out.println("2등"+gradeN2+" "+ gradeA2+"점");
-			System.out.println("3등"+gradeN3+" "+ gradeA3+"점");
+			System.out.println("1등 :"+gradeN1+" "+ gradeA1+"점");
+			System.out.println("2등 :"+gradeN2+" "+ gradeA2+"점");
+			System.out.println("3등 :"+gradeN3+" "+ gradeA3+"점");
 		
 		}
 		

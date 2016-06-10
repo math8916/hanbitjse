@@ -54,8 +54,6 @@ public class Avg3 {
 						
 				switch (ave/10) {
 				case 10:
-					grade = "A";
-					break;
 				case 9:
 					grade = "A";
 					break;
