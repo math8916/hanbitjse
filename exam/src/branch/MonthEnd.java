@@ -41,6 +41,6 @@ public class MonthEnd {
 			return;
 		}
 		 System.out.println(" 월"+day+"일");
-	}
+	} // main end
 	
-}
+} // Class end
