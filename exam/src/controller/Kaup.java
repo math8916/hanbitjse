@@ -10,16 +10,16 @@ package controller;
  * @story : 
 */
 public class Kaup {
-	public String judg(String kaufname, int inputheight,int inputweight){
+	public String cKaup(String kaufname, int inputheight,int inputweight){
 	String na = kaufname;
-	int weight=inputweight;
 	int height=inputheight;
+	int weight=inputweight;
 	String result="";
 	double  kaup = 0.0;
 	// --------- op------------
 	
 	// 공식 부분
-	kaup = weight / (height / 100) / (height / 100);
+	kaup = weight*10000 / (height* height );
 
 	if (kaup < 18.5) {
 		result = "저체중 ";
