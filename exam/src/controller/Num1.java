@@ -1,7 +1,7 @@
 /**
  * 
  */
-package array;
+package controller;
 
 import java.util.Scanner;
 
@@ -20,26 +20,19 @@ public class Num1 {
 	 * 최고 점수는 : xxxx 최저 점수는 :
 	 */
 
-	public static void main(String[] args) {
+	public String cmax(int[] score) {
 
-		Scanner scanner = new Scanner(System.in);
-
-		int counter = 0, max = 0, min = 101;
-		System.out.println("학생수가 몇명입니까 ?");
-		counter = scanner.nextInt();
-
-		int[] score = new int[counter];
-		System.out.println("학생의 점수를 입력 하시오");
-		for (int i = 0; i < score.length; i++) {
-			score[i] = scanner.nextInt();
-
+		int max = 0, min = 101, i=0;
+		
+	
+		for (; i < score.length; i++) {
 			if (score[i] > max) {
 				max = score[i];
 			} else if (score[i] < min) {
 				min = score[i];
 			}
 		}
-		System.out.printf("최고점수  %d   최저 점수는 %d \n", max, +min);
+		return "최고점수"+max+"  최저 점수는 " +min;
 
 	}
 }
