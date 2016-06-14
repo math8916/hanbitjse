@@ -24,16 +24,14 @@ public static void main(String[] args) {
 	String[]grade =new String[3];
 	grade[0]="";grade[1]="";grade[2]="";
 	
-	System.out.println("이름,점수 입력");
-	name[0]=scanner.next();
-	avg[0] =scanner.nextInt();
-	System.out.println("이름,점수 입력");
-	name[1]=scanner.next();
-	avg[1] = scanner.nextInt();
-	System.out.println("이름,점수 입력");
-	name[2]=scanner.next();
-	avg[2] = scanner.nextInt();
 	
+
+	int i = 0; // 바깥으로 나오며 메모리 처리 속도 증가
+	for ( ;i <avg.length; i++) {
+		System.out.println("이름,점수 입력");
+		name[i]=scanner.next();
+		avg[i] =scanner.nextInt();
+	}
 	
 	if (avg[0]>avg[1]&&avg[1]>avg[2]) {
 		grade[0]=name[0];
@@ -81,13 +79,14 @@ public static void main(String[] args) {
 		score[1]=avg[0];
 		score[2]=avg[1];}
 	
-		{
-	
-			System.out.println("1등는"+grade[0]+"점수는"+score[0] );
-			System.out.println("2등는+"+grade[1]+"점수는"+score[1] );
-			System.out.println("3등는+"+grade[2]+"점수는"+score[2] );
+
+		
+	for (int j= 0; j <avg.length; j++) {
+		
+
+			System.out.printf("%d 등는 %s 이고 %d \n",j+1,grade[j],score[j] );
 		}
-
+}
 
 }
-}
+
