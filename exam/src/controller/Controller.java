@@ -22,19 +22,22 @@ public class Controller {
 		MonthEnd monthEnd=new MonthEnd();
 		Num1_1 num1_1=new Num1_1();
 		Arrassign arr=new Arrassign();
-		Num1 jmax=new Num1();
+		Num1 jmax = new Num1();
+		Tex jtex = new Tex();
+		Gender jgender = new Gender();
+		TimeCalc jTimeCalc =new TimeCalc();
 		while (true) {
 			
-			menu = JOptionPane.showInputDialog("1.계산기"
-					+ "2.카우푸 구하기"
-					+ "3.년월말구하기 "
-					+ "4.1등 구하기"
-					+ "5. 학번/나이"
-					+ "6.최고최저점수"
-					+ "7.세금액"
-					+ "8.성별판별"
-					+ "9.시분초구하기"
-					+ "0.종료");
+			menu = JOptionPane.showInputDialog("1.계산기\n"
+					+ "2.카우푸 구하기\n"
+					+ "3.년월말구하기 \n"
+					+ "4.1등 구하기\n"
+					+ "5. 학번/나이\n"
+					+ "6.최고최저점수\n"
+					+ "7.세금액\n"
+					+ "8.성별판별\n"
+					+ "9.시분초구하기\n"
+					+ "0.종료\n");
 			
 			// / if (s.nextInt()>4) {
 			// System.out.println( "다시 입력하시요"); /
@@ -82,7 +85,24 @@ public class Controller {
 				}
 				System.out.println(jmax.cmax(score));
 				break;
-
+			case "7":
+				System.out.println("직원 이름 : [ ]");
+				System.out.println("연봉 : [ ]");
+				System.out.println("세율이 바귀어씁니가? 바뀌었으면 0 , 아니면 1을 입력하세요");
+				
+				 
+				System.out.println(jtex.ctex(s.next(),s.nextInt(),s.nextInt(),s.nextDouble()));
+				
+				break;
+			case "8":
+				System.out.println("이름을 입력 하세요 :");
+				System.out.println("주민번호를 다음 형식으로 입력하세요 000000-0 :");
+				System.out.println(jgender.cgender(s.next(),s.next()));
+				break;
+			case "9":
+				System.out.println("시간을 입력하세요 :");
+				System.out.println(jTimeCalc.cTimeCalc(s.nextInt()));
+				break;
 			case "0":
 				JOptionPane.showConfirmDialog(null, "종료 하시겠니까");
 				System.out.printf("종료합니다");
