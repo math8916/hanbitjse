@@ -35,11 +35,12 @@ public class Num1 {
 
 			if (score[i] > max) {
 				max = score[i];
-			} else if (score[i] < min) {
+			}
+			if (score[i] < min) {
 				min = score[i];
 			}
 		}
 		System.out.printf("최고점수  %d   최저 점수는 %d \n", max, +min);
-
-	}
+		}
+	
 }
