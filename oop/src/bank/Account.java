@@ -6,59 +6,59 @@ package bank;
 import java.util.Random;
 
 /**
- * @date   : 2016. 6. 16.
+ * @date : 2016. 6. 16.
  * @author : 최인철
  * @file_name : Account.java
- * @story : 
-*/
-public class Account {  //클래스 ,헤더 접근제한 -클래스 종류
-	private int accountNo ; // 인스턴스 변수는 초기화 하지 않는다.
+ * @story :
+ */
+public class Account { // 클래스 ,헤더 접근제한 -클래스 종류
+	private int accountNo; // 인스턴스 변수는 초기화 하지 않는다.
 	private String name;
 	private int money;
-	private String bankName;
+	
 	private String id;
 	private String pw;
-	
+	public final static String BANK_NAME="한빛은행";
 	/**
-	 * @param name 
+	 * @param name
 	 * 
 	 */
 	public Account(String name) {
-		this.accountNo =(int)( (Math.random() * 99999)+100000) ;
-		this.name=name;
+		this.accountNo = (int) ((Math.random() * 99999) + 100000);
+		this.name = name;
 	}
-	
-	public void setMoney(int money){
-			this.money=money;
+
+	public void setMoney(int money) {
+		this.money = money;
 	}
-	public void setBankName(String bankName){
-					this.bankName=bankName;
+
+
+	public void setId(String id) {
+		this.id = id;
 	}
-	public void setId(String id){
-						this.id=id;
-	}
+
 	public void setPw(String pw) {
 		this.pw = pw;
 	}
-	
-	public int getAccountNo(){
+
+	public int getAccountNo() {
 		return this.accountNo;
 	}
-	public String getName(){
+
+	public String getName() {
 		return this.name;
 	}
-	public int getMoney(){
+
+	public int getMoney() {
 		return this.money;
+
 	}
-	public String getBankName(){
-		return this.bankName;
-	}
-	
-	public String getId(){
+	public String getId() {
 		return this.id;
 	}
-	public String getPw(){
+
+	public String getPw() {
 		return this.pw;
 	}
-	
+
 }

@@ -17,7 +17,6 @@ import com.sun.xml.internal.bind.v2.runtime.Name;
  */
 public class Bankcontroller {
 	public static void main(String[] args) {
-		String s=null; // =""
 		Account account = null;
 		
 
@@ -45,7 +44,7 @@ public class Bankcontroller {
 			case "4":
 				break;
 			case "5":
-				JOptionPane.showMessageDialog(null,"이름:"+account.getName()+"계좌번호"+account.getAccountNo());
+				JOptionPane.showMessageDialog(null,Account.BANK_NAME+"이름:"+account.getName()+"계좌번호"+account.getAccountNo());
 				break;
 			case "0":
 				JOptionPane.showConfirmDialog(null, "close?");
