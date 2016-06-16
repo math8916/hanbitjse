@@ -25,7 +25,10 @@ public class KaupController {
 				String name = JOptionPane.showInputDialog("이름");
 				String height = JOptionPane.showInputDialog("키");
 				String weight = JOptionPane.showInputDialog("몸무게");
-				System.out.println(jKaup.cKaup(name, height, weight));
+				jKaup.setName(name);
+				jKaup.setHeight(height);
+				jKaup.setWeight(weight);
+				JOptionPane.showMessageDialog(null,jKaup.cKaup());
 
 				break;
 
