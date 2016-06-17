@@ -18,7 +18,7 @@ public class Account { // 클래스 ,헤더 접근제한 -클래스 종류
 	
 	private String id;
 	private String pw;
-	public final static String BANK_NAME="한빛은행";
+	
 	/**
 	 * @param name
 	 * 

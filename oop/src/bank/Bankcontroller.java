@@ -9,6 +9,8 @@ import javax.swing.JOptionPane;
 
 import com.sun.xml.internal.bind.v2.runtime.Name;
 
+import global.MyConstants;
+
 /**
  * @date : 2016. 6. 15.
  * @author : 최인철
@@ -44,7 +46,7 @@ public class Bankcontroller {
 			case "4":
 				break;
 			case "5":
-				JOptionPane.showMessageDialog(null,Account.BANK_NAME+"이름:"+account.getName()+"계좌번호"+account.getAccountNo());
+				JOptionPane.showMessageDialog(null,MyConstants.BANK_NAME+"이름:"+account.getName()+"계좌번호"+account.getAccountNo());
 				break;
 			case "0":
 				JOptionPane.showConfirmDialog(null, "close?");

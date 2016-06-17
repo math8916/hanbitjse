@@ -21,7 +21,7 @@ public class Student {
 	private String gender;
 	private int age;
 	private String reg;
-	public final static String SCHOOL_NAME = "한빛학원"; // 변경 불가능한 초기 고정값
+
 
 	public Student(String name, String pw, String id, String ssn) {
 		this.name = name;
