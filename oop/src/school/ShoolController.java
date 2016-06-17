@@ -23,7 +23,7 @@ while (true) {
 	
 	case "1":
 		String name= JOptionPane.showInputDialog("이름 :");
-		String ssn= JOptionPane.showInputDialog("주민등록 번호 ");
+		String ssn= JOptionPane.showInputDialog("주민등록 번호 ");		
 		String id= JOptionPane.showInputDialog("ID:");
 		String pw= JOptionPane.showInputDialog("PW: ");
 		
@@ -34,8 +34,7 @@ while (true) {
 
 case "2":
 		
-	JOptionPane.showMessageDialog(null,student.SCHOOL_NAME+ "\n 이름:"+student.getName()+"\nID:"+student.getId()+"\n성별"+student.getGender()+ ""
-			+ "\n나이:"+student.getAge()+"\n등록번호:"+student.getReg());
+	JOptionPane.showMessageDialog(null,student.toString());
 		break;
 case "0":
 	JOptionPane.showConfirmDialog(null, "close?");

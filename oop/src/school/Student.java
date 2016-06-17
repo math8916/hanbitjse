@@ -5,6 +5,8 @@ package school;
 
 import java.text.SimpleDateFormat;
 
+import javax.swing.JOptionPane;
+
 /**
  * @date : 2016. 6. 16.
  * @author : 최인철
@@ -21,45 +23,40 @@ public class Student {
 	private String reg;
 	public final static String SCHOOL_NAME = "한빛학원"; // 변경 불가능한 초기 고정값
 
-	// public void setSsn(String ssn) {
-	// this.ssn = ssn;
-	// }
-
-	// public void setName(String name) {
-	// this.name = name;
-	// }
-
-	// public void setId(String id) {
-	// this.id = id;
-	// }
-	/**
-	 * 
-	 */
 	public Student(String name, String pw, String id, String ssn) {
 		this.name = name;
 		this.pw = pw;
 		this.id = id;
 		this.ssn = ssn;
-
 		String now = new SimpleDateFormat("yyyy-MM-dd").format(System.currentTimeMillis());
 		this.reg = now;
-
+		String[] arr0 = now.split("-");
+		int d = Integer.parseInt(arr0[0]);
 		String[] arr = ssn.split("-");
 		int c = Integer.parseInt(arr[1]);
+		int dage = Integer.parseInt(arr[0]);
 		if (c == 0 || c == 9) {
-			System.out.println("잘못 입력 하셨습니다.");
+			JOptionPane.showMessageDialog(null, "주민등록 번호 뒤자리에 0,9는 안됩니다. 다시 입력하세요");
 			return;
 		}
-		// -- up casting c가 char에서 정수로 치환
-		// 실제 문자 1은 49번 이다
-		if (c % 2 == 1) {
-			this.gender = "남";
+		switch ((dage / 100000) % 2) {
+		case 0:
+			age = d - (dage / 10000 + 2000);
+			break;
 
-		} else {
-			this.gender = "여";
+		default:
+			age = d - (dage / 10000 + 1900);
+			break;
 		}
-		int dage = Integer.parseInt(arr[0]);
-		age = 2016 - (dage / 10000 + 1900);
+		switch (c % 2) {
+		case 0:
+			this.gender = "여";
+			break;
+
+		default:
+			this.gender = "남";
+			break;
+		}
 	}
 
 	public void setPw(String pw) {
@@ -100,6 +97,16 @@ public class Student {
 	public String getReg() {
 		return this.reg;
 
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "학생" + name + ", id=" + id + ", 비번" + "******" + ", 성별=" + gender + ", 나이=" + age + ", 등록일자" + reg + "]";
 	}
 
 }
