@@ -22,17 +22,20 @@ while (true) {
 	switch (JOptionPane.showInputDialog(null,"1.등록 2 조회 0. 종료")) {
 	
 	case "1":
+		String name= JOptionPane.showInputDialog("이름 :");
 		String ssn= JOptionPane.showInputDialog("주민등록 번호 ");
 		String id= JOptionPane.showInputDialog("ID:");
 		String pw= JOptionPane.showInputDialog("PW: ");
-		String name= JOptionPane.showInputDialog("이름 :");
+		
 		student = new Student(name, pw, id, ssn);
 		
 		
 		break;
 
 case "2":
-	JOptionPane.showMessageDialog(null,"이름:\n"+student.getName()+"ID:\n"+student.getId()+"성별\n"+student.getGender());
+		
+	JOptionPane.showMessageDialog(null,student.SCHOOL_NAME+ "\n 이름:"+student.getName()+"\nID:"+student.getId()+"\n성별"+student.getGender()+ ""
+			+ "\n나이:"+student.getAge()+"\n등록번호:"+student.getReg());
 		break;
 case "0":
 	JOptionPane.showConfirmDialog(null, "close?");
