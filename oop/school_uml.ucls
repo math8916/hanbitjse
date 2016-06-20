@@ -19,8 +19,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <class id="3" language="java" name="bank.Account" project="oop" file="/oop/src/bank/Account.java" binary="false" 
-    corner="BOTTOM_RIGHT">    
+  <class id="3" language="java" name="bank.AccountBean" project="oop" file="/oop/src/bank/AccountBean.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="501" y="111"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      

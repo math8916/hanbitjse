@@ -5,7 +5,7 @@ package school;
 
 import javax.swing.JOptionPane;
 
-import bank.Account;
+import bank.AccountBean;
 
 /**
  * @date   : 2016. 6. 16.

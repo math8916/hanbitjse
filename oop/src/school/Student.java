@@ -106,7 +106,12 @@ public class Student {
 	 */
 	@Override
 	public String toString() {
-		return "학생" + name + ", id=" + id + ", 비번" + "******" + ", 성별=" + gender + ", 나이=" + age + ", 등록일자" + reg + "]";
+		return "학생" + name + ", "
+				+ "id=" + id + ", "
+				+ "비번" + "******" + ", "
+				+ "성별=" + gender + ", "
+				+ "나이=" + age + ","
+				+ " 등록일자" + reg + "]";
 	}
 
 }
