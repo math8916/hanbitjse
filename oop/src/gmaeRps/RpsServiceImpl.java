@@ -4,9 +4,9 @@ public class RpsServiceImpl implements RpsService {
 	RpsBean rps = new RpsBean();
 
 	@Override
-	public void betPlayValue(int playVale) {
+	public void betPlayValue(int play) {
 		// TODO Auto-generated method stub
-
+		rps.setPlay(play);
 	}
 
 	@Override

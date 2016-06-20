@@ -14,12 +14,16 @@ public class RpsController {
 					break;
 				}
 //
-				// service.betPlayValue(Integer.parseInt(rps);
+				service.betPlayValue(Integer.parseInt(rps));
+				service.setComputerValue();
+				service.whoWin();
+				JOptionPane.showMessageDialog(null, service.showResult());
+				break;
 			default:
 				JOptionPane.showConfirmDialog(null, "close?");
 				return;
 				}
-		break;
+		
 		}
 		
 }

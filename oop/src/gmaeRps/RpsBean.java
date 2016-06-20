@@ -15,13 +15,13 @@ public class RpsBean {
 			this.winner=winner;
 		}
 		public  int getPlay() {
-			return play=play;
+			return play;
 		}
 		public int getCom(){
-			return com=com;
+			return com;
 		}
 		public String getWinner(){
-			return winner=winner;
+			return winner;
 		}
 		
 		
@@ -36,11 +36,11 @@ public class RpsBean {
 			case 2:	user=" 바위" ;break;
 			default :user=" 보 " ;	break;
 			}
-			switch (this.getPlay()) {
+			switch (this.getCom()) {
 			case 1:	comp=" 가위 " ;break;
 			case 2:	comp=" 바위" ;break;
 			default :comp=" 보 " ;	break;
 			}
-			return "[결과=" +winner+"사용자"+ play + "컴퓨터 " + com + "]";
+			return "[결과=" +winner+"\n사용자"+user + "\n컴퓨터 " + comp + "]";
 		}
 }
