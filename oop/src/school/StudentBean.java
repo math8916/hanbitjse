@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
  * @file_name : Student.java
  * @story :
  */
-public class Student {
+public class StudentBean {
 	private String ssn;
 	private String name;
 	private String id;
@@ -23,7 +23,7 @@ public class Student {
 	private String reg;
 
 
-	public Student(String name, String pw, String id, String ssn) {
+	public StudentBean(String name, String pw, String id, String ssn) {
 		this.name = name;
 		this.pw = pw;
 		this.id = id;
@@ -58,7 +58,6 @@ public class Student {
 			break;
 		}
 	}
-
 	public void setPw(String pw) {
 		this.pw = pw;
 	}

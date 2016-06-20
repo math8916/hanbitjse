@@ -5,7 +5,7 @@ package something;
 
 import javax.swing.JOptionPane;
 
-import school.Student;
+import school.StudentBean;
 
 /**
  * @date   : 2016. 6. 17.

@@ -19,7 +19,7 @@ import global.MyConstants;
  */
 public class Bankcontroller {
 	public static void main(String[] args) {
-		AccountService2 service = new AccountService2();
+		AccountService service = new AccountServiceImpl();
 		int y=0;
 
 		while (true) {

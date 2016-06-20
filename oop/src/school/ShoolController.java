@@ -15,27 +15,32 @@ import bank.AccountBean;
 */
 public class ShoolController {
 public static void main(String[] args) {
-	Student student =null;
-	Gender gender =null;
-while (true) {
+	StudentService service = new StudentServiceImpl();
+
+	while (true) {
 	
-	switch (JOptionPane.showInputDialog(null,"1.등록 2 조회 0. 종료")) {
+	switch (JOptionPane.showInputDialog(null,"1.등록 2 보기 3. 수정 4.삭제 0 . 종료")) {
 	
 	case "1":
-		String name= JOptionPane.showInputDialog("이름 :");
-		String ssn= JOptionPane.showInputDialog("주민등록 번호 ");		
-		String id= JOptionPane.showInputDialog("ID:");
-		String pw= JOptionPane.showInputDialog("PW: ");
-		
-		student = new Student(name, pw, id, ssn);
-		
+		String insert= JOptionPane.showInputDialog("이름,PW,ID,SSN");
+		String[] insert1 = insert.split(",");
+		service.registStudent(insert1[0],insert1[1],insert1[2],insert1[3]);
 		
 		break;
 
 case "2":
 		
-	JOptionPane.showMessageDialog(null,student.toString());
+	JOptionPane.showMessageDialog(null,service.showStudent());
 		break;
+case "3":
+	String pw = JOptionPane.showInputDialog(null, "재 비밀번호");
+	service.updatwStudent(pw);
+		break;
+
+case "4":
+	JOptionPane.showMessageDialog(null, service.deleteStudent());
+	break;
+
 case "0":
 	JOptionPane.showConfirmDialog(null, "close?");
 	return;

@@ -9,7 +9,7 @@ package bank;
  * @file_name : Accountservice.java
  * @story : 
 */
-public interface Accountservice {
+public interface AccountService {
 	// 1.개설 2.입금 3.조회 4.출금 5.통장내역
 		// 1.개설
 		public abstract void openAccount(String name,String id, String pw);
