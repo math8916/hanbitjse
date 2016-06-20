@@ -13,6 +13,7 @@ public class RpsController {
 					JOptionPane.showMessageDialog(null,	"잘못된 값입니다.");
 					break;
 				}
+//
 				// service.betPlayValue(Integer.parseInt(rps);
 			default:
 				JOptionPane.showConfirmDialog(null, "close?");
