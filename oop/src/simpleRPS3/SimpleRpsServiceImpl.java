@@ -2,7 +2,7 @@ package simpleRPS3;
 
 import java.util.Random;
 
-public class SimpleRpsImpl implements SimpleRpsService{
+public class SimpleRpsServiceImpl implements SimpleRpsService{
 SimpleRpsBean rps = new SimpleRpsBean();
 	@Override
 	public String playGame(int player) {

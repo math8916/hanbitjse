@@ -1,4 +1,4 @@
-package simpleRPS3;
+package simpleRPS4;
 
 import javax.swing.JOptionPane;
 
