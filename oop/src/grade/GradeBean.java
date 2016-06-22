@@ -42,7 +42,7 @@ public class GradeBean {
 	 * 
 	 * }
 	 */
-	public String gheName() {
+	public String getName() {
 		return name;
 	}
 

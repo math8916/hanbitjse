@@ -55,7 +55,7 @@ public class GradeServiceImpl implements GradeService {
 	@Override
 	public String result() {
 		// TODO Auto-generated method stub
-		return "총점 "+outsum()+" 평균 "+ave()+" +등급"+grade();
+		return "이름 "+gra.getName()+"\n총점 "+outsum()+" \n 평균 "+ave()+" \n등급"+grade();
 	}
 
 }
