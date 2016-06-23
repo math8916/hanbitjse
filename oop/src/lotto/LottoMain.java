@@ -3,11 +3,9 @@
  */
 package lotto;
 
-import java.awt.image.BufferedImage;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
-import java.io.FilterWriter;
 import java.io.IOException;
 
 import javax.swing.JOptionPane;
