@@ -3,6 +3,8 @@
  */
 package lotto;
 
+import java.util.Arrays;
+
 /**
  * @date : 2016. 6. 24.
  * @author : 최인철
@@ -63,8 +65,11 @@ public class LottoBallServiceImpl implements LottoBallService {
 
 					break;
 				}
+				
 			}
+			
 		}
+		Arrays.sort(lotto);
 	}
 
 	/*
