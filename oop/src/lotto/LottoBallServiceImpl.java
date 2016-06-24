@@ -18,10 +18,36 @@ public class LottoBallServiceImpl implements LottoBallService {
 	 * 
 	 * @see lotto.LottoBallService#setLottoBall()
 	 */
-	@Override
-	public void setLottoBall(LottoBean lot) {
-		// TODO Auto-generated method stub
+	/**
+	 * 
+	 */
+	public LottoBallServiceImpl() {
 		this.lotto = new int[6];
+		// TODO Auto-generated constructor stub
+	}
+	@Override
+	public void setLottoBall() {
+		// TODO Auto-generated method stub
+		LottoBean lot = new LottoBean();
+		for (int i = 0; i < lotto.length; i++) {
+			lotto[i]=0;
+		}
+		for (int i = 0; i < lotto.length; i++) {
+			lot.setNumber();
+			int num =lot.getNumber();
+			boolean exist =false;
+			for (int j = 0; j < lotto.length; j++) {
+				if (lotto[j]==num) {
+					exist =true;
+				}
+			}
+			if (exist) {
+				i--;
+				continue;
+			}else {
+				lotto[i]=num;
+			}
+		}
 		int i = 0;
 		while (true) {
 			lot.setNumber();

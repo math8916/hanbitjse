@@ -20,7 +20,7 @@ public class LottoBallMain {
 		LottoBean lot = new LottoBean();
 		LottoBallService service = new LottoBallServiceImpl();
 		StringBuffer buf = new StringBuffer();
-		service.setLottoBall(lot);
+		service.setLottoBall();
 		int[] lotto = service.getLottoBall();
 		Arrays.sort(lotto);
 		for (int i = 0; i < lotto.length; i++) {

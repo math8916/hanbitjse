@@ -18,6 +18,7 @@ public class LottoBallServiceImpl2 implements LottoBallService {
 	 * 
 	 * @see lotto.LottoBallService#setLottoBall()
 	 */
+	
 	@Override
 	public void setLottoBall(LottoBean lot) {
 		// TODO Auto-generated method stub
