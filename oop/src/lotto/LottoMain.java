@@ -7,6 +7,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Arrays;
 
 import javax.swing.JOptionPane;
 
@@ -26,7 +27,8 @@ public class LottoMain {
 		service.setLottos(lot);
 		int[][] lottos = service.getLottos();
 		for (int i = 0; i < lottos.length; i++) {
-			service.sort(lottos[i]);
+//			service.sort(lottos[i]);
+			Arrays.sort(lottos[i]);
 			for (int j = 0; j < lottos[i].length; j++) {
 				buf.append(lottos[i][j] + "\t");
 			}

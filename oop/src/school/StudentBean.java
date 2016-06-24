@@ -21,9 +21,14 @@ public class StudentBean {
 	private String gender;
 	private int age;
 	private String reg;
+/**
+ * 
+ */
+public StudentBean() {
 
+}
 
-	public StudentBean(String name, String pw, String id, String ssn) {
+	public StudentBean(String id, String pw, String name, String ssn) {
 		this.name = name;
 		this.pw = pw;
 		this.id = id;
