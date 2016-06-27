@@ -3,6 +3,7 @@
  */
 package bank;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 import javax.swing.JOptionPane;
@@ -30,14 +31,20 @@ public class AccountBean { // 클래스 ,헤더 접근제한 -클래스 종류
 	public AccountBean(){
 		// default constructor 기본 생성자
 		// 생성자 오버로딩
+		
 	}	
 	public AccountBean(String name, String id, String pw) {
 		this.accountNo = (int) ((Math.random() * 99999) + 100000);
 		this.name = name;
 		this.id =id;
 		this.pw=pw;
+		
 	}
-
+	public void setAccountNo() {
+		// TODO Auto-generated method stub
+		this.accountNo=(int) ((Math.random() * 99999) + 100000);
+	}
+	
 	public void setMoney(int money) {
 		this.money += money;
 	}
@@ -49,7 +56,17 @@ public class AccountBean { // 클래스 ,헤더 접근제한 -클래스 종류
 	public int getAccountNo() {
 		return this.accountNo;
 	}
+	public void setName(String name) {
+		this.name= name;
+		// TODO Auto-generated method stub
 
+	}
+	public void setAccountNo(int accountNo) {
+		this.accountNo = accountNo;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
 	public String getName() {
 		return this.name;
 	}
@@ -84,7 +101,8 @@ public class AccountBean { // 클래스 ,헤더 접근제한 -클래스 종류
 				"계좌번호" + accountNo + ""
 				+ ", 이름=" + name + ""
 				+ ", 잔액=" + money + ""
-				+ ", id=" + id ;
+				+ ", id=" + id +"\n";
+				
 	}
 
 }

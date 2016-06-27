@@ -3,13 +3,7 @@
  */
 package bank;
 
-import java.util.Random;
-
 import javax.swing.JOptionPane;
-
-import com.sun.xml.internal.bind.v2.runtime.Name;
-
-import global.MyConstants;
 
 /**
  * @date : 2016. 6. 15.
@@ -19,15 +13,19 @@ import global.MyConstants;
  */
 public class Bankcontroller {
 	public static void main(String[] args) {
+		int ok=0;
+		String spec ="";
 		AccountService service = new AccountServiceImpl();
-		int y=0;
+		AccountBean bean = new AccountBean();
+		BankService bankService = new BankServiceImpl();
 
 		while (true) {
 
-			switch (JOptionPane.showInputDialog(null, "1.개설 2.입금 3.조회 4.출금 5.통장내역 6.해지 0.종료:")) {
+			switch (JOptionPane.showInputDialog(null, "1.개설 2.입금 3.조회 4.출금 5.통장내역 6.해지 \n"
+					+ "관리자 모드 11.개설 12.조회 13. 조회(계좌번호) 14.이름 조회 0.종료:")) {
 
 			case "1":
-				String spec = JOptionPane.showInputDialog("이름,ID,PW");
+				spec = JOptionPane.showInputDialog("이름,ID,PW");
 			
 				String[] specArr= spec.split(",");
 				service.openAccount(specArr[0],specArr[1],specArr[2]);
@@ -53,6 +51,41 @@ public class Bankcontroller {
 			case "6":
 				JOptionPane.showMessageDialog(null,service.deleteAccount());
 				break;
+			case "11":
+				String list = JOptionPane.showInputDialog("이름,ID,PW");
+				
+				String[] listArr= list.split(",");
+	//			listArr = new ArrayList<AccountBean>();
+//				service.openAccount(listArr[0],listArr[1],listArr[2]);
+				AccountBean acc = new AccountBean();
+				acc.setAccountNo();
+				acc.setName(listArr[0]);
+				acc.setId(listArr[1]);
+				acc.setPw(listArr[2]);
+				bankService.openAccount(acc);
+				break ;
+			case "12":
+				// 조회
+				JOptionPane.showMessageDialog(null, bankService.list());
+				break;
+			case "13":
+				// 계좌번호 조회
+				String searchAccount=JOptionPane.showInputDialog("검색 계좌 번호 입력하세요");
+				bankService.findByAccountNo(searchAccount);
+				JOptionPane.showMessageDialog(null, bankService.findByAccountNo(searchAccount));
+				break;
+			case "14":
+				String searchName=JOptionPane.showInputDialog("검색 이름 입력하세요");
+				bankService.findByName(searchName);
+				JOptionPane.showMessageDialog(null, bankService.findByAccountNo(searchName));
+				
+				// 이름 조회
+				break;
+			case "15":
+				JOptionPane.showMessageDialog(null, bankService.count());
+				break;
+			case "16": break;
+			
 			case "0":
 				JOptionPane.showConfirmDialog(null, "close?");
 				
