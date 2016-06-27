@@ -22,31 +22,22 @@ public class BankServiceImpl implements BankService {
 	}
 
 	@Override
-	public String findByAccountNo(String account) {
+	public AccountBean findByAccountNo(String account) {
 		AccountBean acc = new AccountBean();
-		String searchAccount = "조회 계좌번호가 없음";
 		int i = 0;
 		for (; i < list.size(); i++) {
-			if (account.equals(String.valueOf(list.get(i).getAccountNo()))) {
-				searchAccount = list.get(i).toString();
+			if (account.equals(String.valueOf(list.get(i).getName()))) {
+			acc =	list.get(i);
 				break;
 			}
 
 		}
-		return searchAccount;
+		return acc;
 
 		// TODO Auto-generated method stub
 
 	}
 
-	@Override
-	public String findByName(String name) {
-		String searchName = "";
-
-		return searchName;
-		// TODO Auto-generated method stub
-
-	}
 
 	@Override
 	public int count() {
@@ -74,9 +65,9 @@ public class BankServiceImpl implements BankService {
 	}
 
 	@Override
-	public void openAccount() {
+	public String findByName() {
 		// TODO Auto-generated method stub
-
+		return null;
 	}
 
 }
