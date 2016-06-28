@@ -54,10 +54,13 @@ public class MemberServiceImpl implements MemberService {
 			if (findById(member.getId()).getPw().equals(member.getPw())) {
 				result ="로그인 성공";
 				session = findById(member.getId());	
-			}
+			
 			}else{
 			result = "아이디 실패";
 		}
+	}else{
+		result ="Id 없음";
+	}
 		return result;
 	}
 
