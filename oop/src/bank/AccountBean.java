@@ -34,7 +34,7 @@ public class AccountBean { // 클래스 ,헤더 접근제한 -클래스 종류
 		
 	}	
 	public AccountBean(String name, String id, String pw) {
-		this.accountNo = (int) ((Math.random() * 99999) + 100000);
+		setAccountNo();
 		this.name = name;
 		this.id =id;
 		this.pw=pw;
@@ -42,8 +42,12 @@ public class AccountBean { // 클래스 ,헤더 접근제한 -클래스 종류
 	}
 	public void setAccountNo() {
 		// TODO Auto-generated method stub
-		this.accountNo=(int) ((Math.random() * 99999) + 100000);
+		this.accountNo=(int) ((Math.random() * 999999) + 100000);
+		if(this.accountNo > 999999){
+			this.accountNo -= 100000;
+		}
 	}
+
 	
 	public void setMoney(int money) {
 		this.money += money;

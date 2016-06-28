@@ -11,16 +11,16 @@ public interface BankService {
 			//READ 13.계좌번호
 			public AccountBean findByAccountNo(String account ) ;
 			// REWAD 14. 조회(이름)
-			public String findByName() ;
+			public List<AccountBean> findByName(String name) ;
 			// READ 15. 조회(전체통장수)
 			public int count() ;
 			// public  String withdraw(int output);
 			//16.통장내역
 			public void showAccount() ;
 			//17. UPDATE
-			public void updateAccount();
+			public String updateAccount(AccountBean bean);
 			// 18.해지
-			public String deleteAccount();
+			public String deleteAccount(String account);
 
 			
 }

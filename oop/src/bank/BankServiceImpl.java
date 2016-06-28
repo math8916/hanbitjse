@@ -2,9 +2,10 @@ package bank;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Vector;
 
 public class BankServiceImpl implements BankService {
-	List<AccountBean> list = new ArrayList<AccountBean>();
+	List<AccountBean> list = new Vector<AccountBean>();
 
 	@Override
 	public void openAccount(AccountBean bean) {
@@ -26,7 +27,7 @@ public class BankServiceImpl implements BankService {
 		AccountBean acc = new AccountBean();
 		int i = 0;
 		for (; i < list.size(); i++) {
-			if (account.equals(String.valueOf(list.get(i).getName()))) {
+			if (account.equals(String.valueOf(list.get(i).getAccountNo()))) {
 			acc =	list.get(i);
 				break;
 			}
@@ -53,21 +54,47 @@ public class BankServiceImpl implements BankService {
 	}
 
 	@Override
-	public String deleteAccount() {
+	public String deleteAccount(String delete) {
 		// TODO Auto-generated method stub
-		return null;
+		String result ="";
+		AccountBean temp1 =this.findByAccountNo(delete);
+		if (temp1.getId()==null) {
+			result ="계좌 번호가 존재하지 않습니다.";
+			
+		}else{
+			list.remove(temp1);
+			result = "계좌가 삭제 되었습니다.";
+		}
+		return result;
+	}
+	@Override
+	public String updateAccount(AccountBean bean) {
+		// TODO Auto-generated method stub
+		String result ="";
+		AccountBean temp =this.findByAccountNo(String.valueOf(bean.getAccountNo()));
+		if (temp.getId()==null) {
+			result ="계좌 번호가 존재하지 않습니다.";
+			
+		}else{
+			temp.setPw(bean.getPw());
+			result = "비밀번호가 변경 되었습니다.";
+		}
+		return result;
 	}
 
 	@Override
-	public void updateAccount() {
-		// TODO Auto-generated method stub
+	public List<AccountBean> findByName(String name) {
+		List<AccountBean> accName = new ArrayList<AccountBean>();
+		int i = 0;
+		for (; i < list.size(); i++) {
+			if (name.equals(list.get(i).getName())) {
+			accName .add(list.get(i));
+				
+			}
 
-	}
-
-	@Override
-	public String findByName() {
+		}
 		// TODO Auto-generated method stub
-		return null;
+		return accName;
 	}
 
 }
