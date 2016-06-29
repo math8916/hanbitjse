@@ -14,10 +14,11 @@ import javax.swing.JOptionPane;
 public class MemberController {
 	public static void main(String[] args) {
 		MemberService service = new MemberServiceImpl();
+//		MemberBean member = new MemberBean();
 		String temp ="";
 		while (true) {
 			switch (JOptionPane.showInputDialog("---회원이 보는 화면 -----\n "
-					+ "1.회원가입 2.로그인 3.내정보 수정(비밀번호) 4.탈퇴 0.종료 \n"
+					+ "1.회원가입 2.로그인 3.내정보 수정(비밀번호) 4.비번 변경 5.탈퇴 0.종료 \n"
 					+ "-----관리자 화면 ---------\n"
 					+ "11회원목록 12검색(ID) 13검색(이름) 14검색(성별) 15회원수")) {
 			case "1":
@@ -45,28 +46,31 @@ public class MemberController {
 						break;
 			case "4":
 				
-				JOptionPane.showInputDialog("Id를 입력후,새로운 Pw 입력하시오");
+				temp=JOptionPane.showInputDialog("새로운 Pw 입력하시오");
+	//			JOptionPane.showMessageDialog(null, "변경 되었습니다"+service.updatePW(member));
 				break;
 			case "5":
-				JOptionPane.showInputDialog("Id를 입력후 ,탈퇴 하시겠습까?");
+				JOptionPane.showMessageDialog(null, "삭제 되었습니다"+service.delete());
 				break;
 			case "3":
-				service.detail();
+				JOptionPane.showMessageDialog(null, service.detail());
 				break;
 			case "11":
 				service.list();
-				JOptionPane.showMessageDialog(null, "전체리스");
+				JOptionPane.showMessageDialog(null, "전체리스"+service.list());
 				break;
 			case "12":
 				service.findById(temp);
 				 JOptionPane.showInputDialog("검색할 Id를 입력하세요");
 				break;
 			case "13":
-				service.findByName(temp);
-				 JOptionPane.showInputDialog("검색할 이름를 입력하세요");
+				String name="";
+				service.findByName(name);
+				 name=JOptionPane.showInputDialog("검색할 이름를 입력하세요");
+				 JOptionPane.showMessageDialog(null, service.findByName(name));
 				break;
 			case "14":
-				service.findByGender(temp);
+				service.countByGender(temp);
 				 JOptionPane.showInputDialog("검색할 성별를 입력하세요");
 				break;
 			case "15":

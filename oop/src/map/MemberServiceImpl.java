@@ -3,9 +3,13 @@
  */
 package map;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Vector;
+
+import com.sun.org.apache.regexp.internal.recompile;
 
 /**
  * @date :2016. 6. 28.
@@ -15,6 +19,7 @@ import java.util.Map;
  */
 public class MemberServiceImpl implements MemberService {
 	Map<String, MemberBean> map;
+	
 	MemberBean session;
 
 	/*
@@ -29,16 +34,15 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public String join(MemberBean member) {
 		// TODO Auto-generated method stub
-		String result="";
-		if(map.containsKey(member.getId())){
+		String result = "";
+		if (map.containsKey(member.getId())) {
 			result = "이미 존재합니다";
-		}else{
+		} else {
 			map.put(member.getId(), member);
-			result ="가입성공";
+			result = "가입성공";
 		}
 		return result;
 	}
-
 
 	/*
 	 * (non-Javadoc)
@@ -49,18 +53,19 @@ public class MemberServiceImpl implements MemberService {
 	public String login(MemberBean member) {
 		// TODO Auto-generated method stub\
 		String result = "";
+		System.out.println("회원가입시 비번:" + map.get(member.getId()));
 		if (map.containsKey(member.getId())) {
-			
+
 			if (findById(member.getId()).getPw().equals(member.getPw())) {
-				result ="로그인 성공";
-				session = findById(member.getId());	
-			
-			}else{
-			result = "아이디 실패";
+				result = "로그인 성공";
+				session = findById(member.getId());
+
+			} else {
+				result = "아이디 실패";
+			}
+		} else {
+			result = "Id 없음";
 		}
-	}else{
-		result ="Id 없음";
-	}
 		return result;
 	}
 
@@ -70,10 +75,10 @@ public class MemberServiceImpl implements MemberService {
 	 * @see map.MemberService#detail()
 	 */
 	@Override
-	public String detail() {
-		String result= "";
+	public MemberBean detail() {
+
 		// TODO Auto-generated method stub
-		return null;
+		return session;
 	}
 
 	/*
@@ -83,8 +88,13 @@ public class MemberServiceImpl implements MemberService {
 	 */
 	@Override
 	public List<MemberBean> list() {
+		List<MemberBean> memberlist = new ArrayList<MemberBean>();
+		for (Map.Entry<String,MemberBean> entry : map.entrySet()) {
+				memberlist.add(entry.getValue());
+			}
+
 		// TODO Auto-generated method stub
-		return null;
+		return memberlist;
 	}
 
 	/*
@@ -98,26 +108,31 @@ public class MemberServiceImpl implements MemberService {
 		return map.get(id);
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see map.MemberService#findByName(java.lang.String)
-	 */
 	@Override
 	public List<MemberBean> findByName(String name) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+		List<MemberBean> list = new ArrayList<MemberBean>();
+		for (String key : map.keySet()) {
+			if (name.equals(map.get(key).getName())) {
+				list.add(map.get(key));
+			}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see map.MemberService#findByGender(java.lang.String)
-	 */
-	@Override
-	public List<MemberBean> findByGender(String gender) {
+		}
 		// TODO Auto-generated method stub
-		return null;
+		return list;
+		// TODO Auto-generated method stub
+	}
+	@Override
+	public int countByGender(String gender) {
+		int count = 0;
+
+		for (String key : map.keySet()) {
+			if (gender.equals(map.get(key).getGender())) {
+				count++;
+			}
+
+		}
+		// TODO Auto-generated method stub
+		return count;
 	}
 
 	/*
@@ -128,7 +143,8 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public void updatePW(MemberBean member) {
 		// TODO Auto-generated method stub
-
+		session.setPw(member.getPw());
+		map.put(session.getId(), session);
 	}
 
 	/*
@@ -137,9 +153,11 @@ public class MemberServiceImpl implements MemberService {
 	 * @see map.MemberService#delete(java.lang.String)
 	 */
 	@Override
-	public String delete(String id) {
+	public String delete() {
+		map.remove(session.getId());
+		session = null;
 		// TODO Auto-generated method stub
-		return null;
+		return "삭제성공";
 	}
 
 	/*

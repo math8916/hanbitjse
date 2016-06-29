@@ -54,6 +54,6 @@ public MemberBean() {
 
 @Override
 public String toString() {
-	return "회원 아이디" + id + "\n, pw= ******" + ", \n회원이름" + name + "\n 성별" + gender ;
+	return "회원 아이디" + id + "\n, pw=" +pw+ ", \n회원이름" + name + "\n 성별" + gender ;
 }
 }

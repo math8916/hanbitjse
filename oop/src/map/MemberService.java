@@ -22,13 +22,13 @@ public interface MemberService {
 	
 	public String join(MemberBean member);
 	public String login(MemberBean member);
-	public String detail();
+	public MemberBean detail();
 	public List<MemberBean> list();
 	public MemberBean findById(String id);
 	public List<MemberBean> findByName(String name);
-	public List<MemberBean> findByGender(String gender);
+	public int countByGender(String gender);
 	public void updatePW(MemberBean member);
-	public String delete(String id);
+	public String delete();
 	public int count();
 	
 }
